@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useInView, Variants } from 'framer-motion';
+import { ease } from '@/lib/motion';
 
 export default function Home() {
   const footerRef = useRef<HTMLElement>(null);
@@ -10,7 +11,7 @@ export default function Home() {
 
   const fadeUp: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: ease.out } }
   };
 
   const staggerContainer: Variants = {
@@ -37,17 +38,17 @@ export default function Home() {
           <motion.use href="#brand-flower" x="1200" y="150" fill="var(--color-petal)" 
             initial={{ scale: 0, rotate: -45 }}
             animate={{ scale: 1.5, rotate: 15 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
+            transition={{ duration: 1.5, ease: ease.out }}
           />
           <motion.use href="#brand-flower" x="900" y="700" fill="var(--color-hot-berry)" className="opacity-95"
             initial={{ scale: 0, rotate: 0 }}
             animate={{ scale: 2.2, rotate: -20 }}
-            transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 1.5, ease: ease.out, delay: 0.2 }}
           />
           <motion.use href="#brand-flower" x="650" y="450" fill="var(--color-bubblegum)" className="opacity-90"
             initial={{ scale: 0, rotate: 15 }}
             animate={{ scale: 1.3, rotate: 45 }}
-            transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
+            transition={{ duration: 1.5, ease: ease.out, delay: 0.4 }}
           />
         </svg>
       </div>
@@ -81,30 +82,30 @@ export default function Home() {
             </defs>
             {/* 16 Small Safe-Zone Flowers (No Overlaps) */}
             {/* Left Edge (Near Logo/Photo) */}
-            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-50" initial={{ scale: 0.25 }} animate={{ rotate: 360, x: [100, 120, 100], y: [200, 180, 200] }} transition={{ repeat: Infinity, duration: 25, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-40" initial={{ scale: 0.35 }} animate={{ rotate: -360, x: [150, 130, 150], y: [450, 470, 450] }} transition={{ repeat: Infinity, duration: 30, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.28 }} animate={{ rotate: 360, x: [100, 110, 100], y: [700, 680, 700] }} transition={{ repeat: Infinity, duration: 20, ease: "easeInOut" }} />
+            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-50" initial={{ scale: 0.25 }} animate={{ rotate: 360, x: [100, 120, 100], y: [200, 180, 200] }} transition={{ repeat: Infinity, duration: 25, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-40" initial={{ scale: 0.35 }} animate={{ rotate: -360, x: [150, 130, 150], y: [450, 470, 450] }} transition={{ repeat: Infinity, duration: 30, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.28 }} animate={{ rotate: 360, x: [100, 110, 100], y: [700, 680, 700] }} transition={{ repeat: Infinity, duration: 20, ease: ease.inOut }} />
 
             {/* Right Edge (Near iPhone/Photo) */}
-            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-40" initial={{ scale: 0.3 }} animate={{ rotate: -360, x: [1250, 1230, 1250], y: [200, 220, 200] }} transition={{ repeat: Infinity, duration: 28, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-30" initial={{ scale: 0.4 }} animate={{ rotate: 360, x: [1200, 1220, 1200], y: [500, 480, 500] }} transition={{ repeat: Infinity, duration: 22, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-50" initial={{ scale: 0.25 }} animate={{ rotate: -360, x: [1250, 1270, 1250], y: [800, 780, 800] }} transition={{ repeat: Infinity, duration: 26, ease: "easeInOut" }} />
+            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-40" initial={{ scale: 0.3 }} animate={{ rotate: -360, x: [1250, 1230, 1250], y: [200, 220, 200] }} transition={{ repeat: Infinity, duration: 28, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-30" initial={{ scale: 0.4 }} animate={{ rotate: 360, x: [1200, 1220, 1200], y: [500, 480, 500] }} transition={{ repeat: Infinity, duration: 22, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-50" initial={{ scale: 0.25 }} animate={{ rotate: -360, x: [1250, 1270, 1250], y: [800, 780, 800] }} transition={{ repeat: Infinity, duration: 26, ease: ease.inOut }} />
 
             {/* Top Edge (Directly above photo) */}
-            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-40" initial={{ scale: 0.3 }} animate={{ rotate: 360, x: [400, 380, 400], y: [50, 70, 50] }} transition={{ repeat: Infinity, duration: 24, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-60" initial={{ scale: 0.45 }} animate={{ rotate: -360, x: [700, 720, 700], y: [40, 20, 40] }} transition={{ repeat: Infinity, duration: 29, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.35 }} animate={{ rotate: 360, x: [1000, 980, 1000], y: [60, 80, 60] }} transition={{ repeat: Infinity, duration: 21, ease: "easeInOut" }} />
+            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-40" initial={{ scale: 0.3 }} animate={{ rotate: 360, x: [400, 380, 400], y: [50, 70, 50] }} transition={{ repeat: Infinity, duration: 24, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-60" initial={{ scale: 0.45 }} animate={{ rotate: -360, x: [700, 720, 700], y: [40, 20, 40] }} transition={{ repeat: Infinity, duration: 29, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.35 }} animate={{ rotate: 360, x: [1000, 980, 1000], y: [60, 80, 60] }} transition={{ repeat: Infinity, duration: 21, ease: ease.inOut }} />
 
             {/* Bottom Edge (Directly below photo) */}
-            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-40" initial={{ scale: 0.35 }} animate={{ rotate: -360, x: [400, 420, 400], y: [850, 830, 850] }} transition={{ repeat: Infinity, duration: 27, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-50" initial={{ scale: 0.4 }} animate={{ rotate: 360, x: [700, 680, 700], y: [900, 880, 900] }} transition={{ repeat: Infinity, duration: 23, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-40" initial={{ scale: 0.28 }} animate={{ rotate: -360, x: [1000, 1020, 1000], y: [850, 870, 850] }} transition={{ repeat: Infinity, duration: 25, ease: "easeInOut" }} />
+            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-40" initial={{ scale: 0.35 }} animate={{ rotate: -360, x: [400, 420, 400], y: [850, 830, 850] }} transition={{ repeat: Infinity, duration: 27, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-50" initial={{ scale: 0.4 }} animate={{ rotate: 360, x: [700, 680, 700], y: [900, 880, 900] }} transition={{ repeat: Infinity, duration: 23, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-40" initial={{ scale: 0.28 }} animate={{ rotate: -360, x: [1000, 1020, 1000], y: [850, 870, 850] }} transition={{ repeat: Infinity, duration: 25, ease: ease.inOut }} />
 
             {/* Far Corners (Kept Small) */}
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.11 }} animate={{ rotate: 360, x: [30, 10, 30], y: [30, 50, 30] }} transition={{ repeat: Infinity, duration: 32, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-30" initial={{ scale: 0.13 }} animate={{ rotate: -360, x: [30, 50, 30], y: [880, 860, 880] }} transition={{ repeat: Infinity, duration: 35, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-30" initial={{ scale: 0.14 }} animate={{ rotate: 360, x: [1380, 1360, 1380], y: [30, 10, 30] }} transition={{ repeat: Infinity, duration: 31, ease: "easeInOut" }} />
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.12 }} animate={{ rotate: -360, x: [1380, 1400, 1380], y: [880, 900, 880] }} transition={{ repeat: Infinity, duration: 33, ease: "easeInOut" }} />
+            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.11 }} animate={{ rotate: 360, x: [30, 10, 30], y: [30, 50, 30] }} transition={{ repeat: Infinity, duration: 32, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-30" initial={{ scale: 0.13 }} animate={{ rotate: -360, x: [30, 50, 30], y: [880, 860, 880] }} transition={{ repeat: Infinity, duration: 35, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-30" initial={{ scale: 0.14 }} animate={{ rotate: 360, x: [1380, 1360, 1380], y: [30, 10, 30] }} transition={{ repeat: Infinity, duration: 31, ease: ease.inOut }} />
+            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.12 }} animate={{ rotate: -360, x: [1380, 1400, 1380], y: [880, 900, 880] }} transition={{ repeat: Infinity, duration: 33, ease: ease.inOut }} />
           </svg>
         </div>
 
@@ -133,7 +134,7 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, x: -50, rotateY: 20 }} 
               animate={{ opacity: 1, x: 0, rotateY: 15, y: [0, -10, 0] }} 
-              transition={{ opacity: { duration: 1, delay: 0.4 }, x: { duration: 1, delay: 0.4 }, y: { repeat: Infinity, duration: 6, ease: "easeInOut" } }}
+              transition={{ opacity: { duration: 1, delay: 0.4 }, x: { duration: 1, delay: 0.4 }, y: { repeat: Infinity, duration: 6, ease: ease.inOut } }}
               className="w-[340px] lg:w-[480px] h-[260px] lg:h-[340px] bg-[#1a1a1a] rounded-xl shadow-[30px_30px_60px_rgba(0,0,0,0.4)] border-[3px] border-[#333] flex flex-col overflow-hidden pointer-events-auto relative"
               style={{ transform: "translateZ(100px) rotateY(15deg) rotateX(5deg)" }}
             >
@@ -182,7 +183,7 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, x: 50, rotateY: -20 }} 
               animate={{ opacity: 1, x: 0, rotateY: -15, y: [0, -15, 0] }} 
-              transition={{ opacity: { duration: 1, delay: 0.6 }, x: { duration: 1, delay: 0.6 }, y: { repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 } }}
+              transition={{ opacity: { duration: 1, delay: 0.6 }, x: { duration: 1, delay: 0.6 }, y: { repeat: Infinity, duration: 5, ease: ease.inOut, delay: 1 } }}
               className="w-[240px] lg:w-[280px] h-[500px] lg:h-[580px] bg-white rounded-[2.5rem] lg:rounded-[3rem] shadow-[[-30px_30px_60px_rgba(0,0,0,0.4)]] border-[8px] border-[#222] overflow-hidden pointer-events-auto relative"
               style={{ transform: "translateZ(150px) rotateY(-15deg) rotateX(5deg)" }}
             >
@@ -400,7 +401,7 @@ export default function Home() {
             className="bg-[var(--color-petal)] rounded-[3rem] p-8 md:p-16 relative overflow-hidden"
           >
             <motion.svg 
-              animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+              animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 60, ease: ease.linear }}
               viewBox="0 0 200 200" className="absolute -top-20 -right-20 w-64 h-64 opacity-50 text-[var(--color-bubblegum)] pointer-events-none"
             >
               <use href="#brand-flower" x="100" y="100" transform="scale(0.5)" fill="currentColor" />
@@ -435,3 +436,4 @@ export default function Home() {
     </div>
   );
 }
+

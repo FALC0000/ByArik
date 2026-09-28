@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
+import { ease } from '@/lib/motion';
 
 export default function CreatorModelService() {
   const { scrollYProgress } = useScroll();
@@ -8,7 +9,7 @@ export default function CreatorModelService() {
 
   const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: ease.out } }
   };
 
   const staggerContainer: Variants = {
@@ -65,7 +66,7 @@ export default function CreatorModelService() {
             </motion.p>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.8, rotate: -5 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 1, ease: "easeOut" }} className="relative h-[500px] w-full hidden lg:block">
+          <motion.div initial={{ opacity: 0, scale: 0.8, rotate: -5 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 1, ease: ease.out }} className="relative h-[500px] w-full hidden lg:block">
             {/* Abstract Decorative Element for Hero */}
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-bubblegum)] to-[var(--color-apricoat)] rounded-[4rem] rotate-3 opacity-20 blur-2xl"></div>
             <div className="absolute inset-4 bg-white/40 backdrop-blur-xl border border-white/60 rounded-[3rem] shadow-2xl p-8 flex flex-col justify-between overflow-hidden">
