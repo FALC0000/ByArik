@@ -54,192 +54,268 @@ export default function Home() {
       </div>
 
       {/* Full-Screen Cinematic Visual Hero */}
-      <section id="home" className="relative w-full h-screen min-h-[850px] flex items-center justify-center overflow-hidden perspective-[2000px] bg-[var(--color-floral)]">
-        
-        {/* Massive Logo (Left side) Perfectly Centered in Negative Space */}
-        <motion.div 
-          initial={{ opacity: 0, x: -30 }} 
-          animate={{ opacity: 1, x: 0 }} 
-          transition={{ duration: 1, delay: 0.2 }}
-          className="absolute left-[20%] top-[30%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
-        >
-          <img 
-            src="/arik-logo-transparent.png" 
-            alt="ARIK Logo" 
-            className="w-[350px] md:w-[550px] lg:w-[700px] h-auto object-contain drop-shadow-md" 
-          />
-        </motion.div>
-        
-        {/* 2. Three Rotating Brand Flowers (Deep Background) */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <svg viewBox="0 0 1400 900" className="w-full h-full object-cover opacity-80">
-            <defs>
-              <g id="brand-flower">
-                <ellipse cx="0" cy="0" rx="45" ry="160" />
-                <ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(60)" />
-                <ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(120)" />
-              </g>
-            </defs>
-            {/* 16 Small Safe-Zone Flowers (No Overlaps) */}
-            {/* Left Edge (Near Logo/Photo) */}
-            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-50" initial={{ scale: 0.25 }} animate={{ rotate: 360, x: [100, 120, 100], y: [200, 180, 200] }} transition={{ repeat: Infinity, duration: 25, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-40" initial={{ scale: 0.35 }} animate={{ rotate: -360, x: [150, 130, 150], y: [450, 470, 450] }} transition={{ repeat: Infinity, duration: 30, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.28 }} animate={{ rotate: 360, x: [100, 110, 100], y: [700, 680, 700] }} transition={{ repeat: Infinity, duration: 20, ease: ease.inOut }} />
+      <section id="home" className="relative w-full overflow-hidden bg-[var(--color-floral)]">
 
-            {/* Right Edge (Near iPhone/Photo) */}
-            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-40" initial={{ scale: 0.3 }} animate={{ rotate: -360, x: [1250, 1230, 1250], y: [200, 220, 200] }} transition={{ repeat: Infinity, duration: 28, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-30" initial={{ scale: 0.4 }} animate={{ rotate: 360, x: [1200, 1220, 1200], y: [500, 480, 500] }} transition={{ repeat: Infinity, duration: 22, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-50" initial={{ scale: 0.25 }} animate={{ rotate: -360, x: [1250, 1270, 1250], y: [800, 780, 800] }} transition={{ repeat: Infinity, duration: 26, ease: ease.inOut }} />
+        {/* ─── MOBILE HERO ─── */}
+        <div className="lg:hidden flex flex-col items-center pt-0 pb-10 relative min-h-screen">
 
-            {/* Top Edge (Directly above photo) */}
-            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-40" initial={{ scale: 0.3 }} animate={{ rotate: 360, x: [400, 380, 400], y: [50, 70, 50] }} transition={{ repeat: Infinity, duration: 24, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-60" initial={{ scale: 0.45 }} animate={{ rotate: -360, x: [700, 720, 700], y: [40, 20, 40] }} transition={{ repeat: Infinity, duration: 29, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.35 }} animate={{ rotate: 360, x: [1000, 980, 1000], y: [60, 80, 60] }} transition={{ repeat: Infinity, duration: 21, ease: ease.inOut }} />
-
-            {/* Bottom Edge (Directly below photo) */}
-            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-40" initial={{ scale: 0.35 }} animate={{ rotate: -360, x: [400, 420, 400], y: [850, 830, 850] }} transition={{ repeat: Infinity, duration: 27, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-50" initial={{ scale: 0.4 }} animate={{ rotate: 360, x: [700, 680, 700], y: [900, 880, 900] }} transition={{ repeat: Infinity, duration: 23, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-40" initial={{ scale: 0.28 }} animate={{ rotate: -360, x: [1000, 1020, 1000], y: [850, 870, 850] }} transition={{ repeat: Infinity, duration: 25, ease: ease.inOut }} />
-
-            {/* Far Corners (Kept Small) */}
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.11 }} animate={{ rotate: 360, x: [30, 10, 30], y: [30, 50, 30] }} transition={{ repeat: Infinity, duration: 32, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-petal)" className="opacity-30" initial={{ scale: 0.13 }} animate={{ rotate: -360, x: [30, 50, 30], y: [880, 860, 880] }} transition={{ repeat: Infinity, duration: 35, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-bubblegum)" className="opacity-30" initial={{ scale: 0.14 }} animate={{ rotate: 360, x: [1380, 1360, 1380], y: [30, 10, 30] }} transition={{ repeat: Infinity, duration: 31, ease: ease.inOut }} />
-            <motion.use href="#brand-flower" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.12 }} animate={{ rotate: -360, x: [1380, 1400, 1380], y: [880, 900, 880] }} transition={{ repeat: Infinity, duration: 33, ease: ease.inOut }} />
-          </svg>
-        </div>
-
-        {/* 1. Center Arik Photo (Un-zoomed, high quality, faded edges) */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-          <div 
-            className="relative w-full max-w-[800px] h-[80vh] max-h-[900px] mt-12 opacity-90"
-            style={{
-              WebkitMaskImage: 'radial-gradient(ellipse at 50% 50%, black 40%, transparent 75%)',
-              maskImage: 'radial-gradient(ellipse at 50% 50%, black 40%, transparent 75%)'
-            }}
-          >
-            <img 
-              src="/arik-hero.jpg" 
-              alt="Arik Background" 
-              className="w-full h-full object-contain object-center"
-            />
-          </div>
-        </div>
-
-        {/* 3. Devices Container (Explicit Positioning) */}
-        <div className="hidden lg:block absolute inset-0 z-20 pointer-events-none" style={{ transformStyle: 'preserve-3d' }}>
-          
-          {/* 3D Floating MacBook (Bottom Left Centered) */}
-          <div className="absolute left-[20%] bottom-8 lg:bottom-12 -translate-x-1/2 z-30 pointer-events-none" style={{ perspective: '2000px' }}>
-            <motion.div 
-              initial={{ opacity: 0, x: -50, rotateY: 20 }} 
-              animate={{ opacity: 1, x: 0, rotateY: 15, y: [0, -10, 0] }} 
-              transition={{ opacity: { duration: 1, delay: 0.4 }, x: { duration: 1, delay: 0.4 }, y: { repeat: Infinity, duration: 6, ease: ease.inOut } }}
-              className="w-[340px] lg:w-[480px] h-[260px] lg:h-[340px] bg-[#1a1a1a] rounded-xl shadow-[30px_30px_60px_rgba(0,0,0,0.4)] border-[3px] border-[#333] flex flex-col overflow-hidden pointer-events-auto relative"
-              style={{ transform: "translateZ(100px) rotateY(15deg) rotateX(5deg)" }}
+          {/* Background flowers — mobile only, positioned around the photo */}
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+            {/* Top-left corner */}
+            <motion.div
+              animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 18, ease: ease.linear }}
+              className="absolute -top-16 -left-16 w-40 h-40 text-[var(--color-petal)] opacity-60"
             >
-              {/* Mac Title Bar */}
-              <div className="h-6 bg-[#2a2a2a] flex items-center px-3 gap-1.5 border-b border-[#333]">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
-                <span className="text-[10px] text-gray-400 font-mono ml-4">CapCut Pro - Reels_Arik.mp4</span>
-              </div>
-              
-              {/* CapCut Interface Mockup */}
-              <div className="flex-1 bg-[#141414] flex flex-col p-2 gap-2">
-                <div className="flex gap-2 h-1/2">
-                  <div className="flex-1 bg-[#1f1f1f] rounded border border-[#2a2a2a] p-2 flex gap-2">
-                     <div className="w-12 h-12 bg-gray-700 rounded-sm" />
-                     <div className="w-12 h-12 bg-[var(--color-petal)] rounded-sm" />
-                     <div className="w-12 h-12 bg-[var(--color-hot-berry)] rounded-sm opacity-50" />
-                  </div>
-                  <div className="w-[45%] bg-black rounded border border-[#2a2a2a] flex items-center justify-center relative overflow-hidden">
-                     <img src="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=400&auto=format&fit=crop" className="w-full h-full object-cover opacity-80" alt="Preview" />
-                     <div className="absolute inset-0 border-[2px] border-cyan-500/50" />
-                  </div>
-                </div>
-                
-                <div className="flex-1 bg-[#1f1f1f] rounded border border-[#2a2a2a] p-2 flex flex-col gap-1 relative overflow-hidden">
-                  <div className="h-4 border-b border-[#333] flex gap-8 text-[8px] text-gray-500 font-mono">
-                    <span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span>
-                  </div>
-                  <div className="absolute top-0 bottom-0 left-[35%] w-[1px] bg-red-500 z-10">
-                    <div className="w-2 h-2 -ml-[3.5px] bg-red-500 rounded-full" />
-                  </div>
-                  <div className="h-5 mt-1 w-[80%] bg-blue-500/30 rounded flex items-center px-1 border border-blue-500/50">
-                    <span className="text-[8px] text-blue-200">Video_01.mp4</span>
-                  </div>
-                  <div className="h-5 w-[40%] bg-pink-500/30 rounded flex items-center px-1 border border-pink-500/50 ml-[10%]">
-                    <span className="text-[8px] text-pink-200">B-Roll_Arik</span>
-                  </div>
-                </div>
-              </div>
+              <svg viewBox="-160 -160 320 320" fill="currentColor"><ellipse cx="0" cy="0" rx="45" ry="160"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(60)"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(120)"/></svg>
+            </motion.div>
+            {/* Top-right corner */}
+            <motion.div
+              animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 22, ease: ease.linear }}
+              className="absolute -top-12 -right-14 w-36 h-36 text-[var(--color-bubblegum)] opacity-50"
+            >
+              <svg viewBox="-160 -160 320 320" fill="currentColor"><ellipse cx="0" cy="0" rx="45" ry="160"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(60)"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(120)"/></svg>
+            </motion.div>
+            {/* Left mid */}
+            <motion.div
+              animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 28, ease: ease.linear }}
+              className="absolute top-1/3 -left-20 w-44 h-44 text-[var(--color-hot-berry)] opacity-30"
+            >
+              <svg viewBox="-160 -160 320 320" fill="currentColor"><ellipse cx="0" cy="0" rx="45" ry="160"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(60)"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(120)"/></svg>
+            </motion.div>
+            {/* Right mid */}
+            <motion.div
+              animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 20, ease: ease.linear }}
+              className="absolute top-[40%] -right-16 w-36 h-36 text-[var(--color-petal)] opacity-50"
+            >
+              <svg viewBox="-160 -160 320 320" fill="currentColor"><ellipse cx="0" cy="0" rx="45" ry="160"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(60)"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(120)"/></svg>
+            </motion.div>
+            {/* Bottom-left */}
+            <motion.div
+              animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 24, ease: ease.linear }}
+              className="absolute bottom-16 -left-14 w-32 h-32 text-[var(--color-bubblegum)] opacity-40"
+            >
+              <svg viewBox="-160 -160 320 320" fill="currentColor"><ellipse cx="0" cy="0" rx="45" ry="160"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(60)"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(120)"/></svg>
+            </motion.div>
+            {/* Bottom-right */}
+            <motion.div
+              animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 26, ease: ease.linear }}
+              className="absolute bottom-10 -right-12 w-36 h-36 text-[var(--color-hot-berry)] opacity-35"
+            >
+              <svg viewBox="-160 -160 320 320" fill="currentColor"><ellipse cx="0" cy="0" rx="45" ry="160"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(60)"/><ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(120)"/></svg>
             </motion.div>
           </div>
 
-          {/* 3D Floating iPhone (Centered Right) */}
-          <div className="absolute right-[20%] top-1/2 translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none" style={{ perspective: '2000px' }}>
-            <motion.div 
-              initial={{ opacity: 0, x: 50, rotateY: -20 }} 
-              animate={{ opacity: 1, x: 0, rotateY: -15, y: [0, -15, 0] }} 
-              transition={{ opacity: { duration: 1, delay: 0.6 }, x: { duration: 1, delay: 0.6 }, y: { repeat: Infinity, duration: 5, ease: ease.inOut, delay: 1 } }}
-              className="w-[240px] lg:w-[280px] h-[500px] lg:h-[580px] bg-white rounded-[2.5rem] lg:rounded-[3rem] shadow-[[-30px_30px_60px_rgba(0,0,0,0.4)]] border-[8px] border-[#222] overflow-hidden pointer-events-auto relative"
-              style={{ transform: "translateZ(150px) rotateY(-15deg) rotateX(5deg)" }}
+          {/* Logo — above the photo, NOT overlapping */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
+            className="relative z-20 pt-14 pb-4"
+          >
+            <img src="/arik-logo-transparent.png" alt="ARIK Logo" className="w-52 h-auto object-contain drop-shadow-md mx-auto" />
+          </motion.div>
+
+          {/* Hero Photo — full width, portrait style */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }}
+            className="relative z-10 w-full px-6"
+          >
+            <div
+              className="relative w-full max-w-[340px] mx-auto rounded-[2.5rem] overflow-hidden shadow-2xl"
+              style={{
+                boxShadow: '0 30px 80px rgba(196,54,112,0.25), 0 10px 30px rgba(0,0,0,0.1)'
+              }}
             >
-            <div className="absolute top-0 inset-x-0 h-5 flex justify-center z-40">
-              <div className="w-24 h-5 bg-[#222] rounded-b-xl" />
-            </div>
-            
-            <div className="pt-8 px-4 pb-4 h-full bg-white overflow-hidden">
-              <div className="flex items-center justify-between mb-4 mt-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] p-[2px]">
-                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden">
-                      <img src="/arik-hero.jpg" alt="Profile" className="w-full h-full object-cover" />
-                    </div>
-                  </div>
-                  <div>
-                    <span className="font-bold text-[12px] block leading-tight">arik.studio</span>
-                    <span className="text-[10px] text-gray-500 font-medium">Content Studio & Strategy</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="text-[11px] mb-4 leading-snug text-gray-800">
-                <strong>ARIK</strong><br/>
-                🌻 Florecimiento con Cercanía<br/>
-                Tu mano derecha creativa y estratégica<br/>
-                <span className="text-blue-600 font-medium">linktr.ee/arikstudio</span>
-              </div>
-
-              <div className="flex gap-2 mb-4">
-                <div className="flex-1 bg-gray-100 rounded-md py-1.5 text-center text-[11px] font-bold">Follow</div>
-                <div className="flex-1 bg-gray-100 rounded-md py-1.5 text-center text-[11px] font-bold">Message</div>
-              </div>
-              
-              <div className="grid grid-cols-3 gap-0.5">
-                <div className="aspect-square bg-[var(--color-petal)]" />
-                <div className="aspect-square bg-[var(--color-apricoat)]" />
-                <div className="aspect-square bg-[var(--color-hot-berry)] opacity-90" />
-                <div className="aspect-square bg-gray-200" />
-                <div className="aspect-square bg-[var(--color-bubblegum)]" />
-                <div className="aspect-square bg-gray-300" />
-                <div className="aspect-square bg-gray-400" />
-                <div className="aspect-square bg-[var(--color-hot-berry)]" />
-                <div className="aspect-square bg-[var(--color-petal)]" />
-              </div>
-            </div>
-            
-            <div className="absolute bottom-0 inset-x-0 h-14 bg-white border-t border-gray-200 flex justify-around items-center z-40">
-              <div className="w-6 h-6 rounded-md border-2 border-black" />
-              <div className="w-6 h-6 rounded-full border-2 border-gray-400" />
-              <div className="w-6 h-6 bg-black rounded-full" />
+              <img
+                src="/arik-hero.jpg"
+                alt="Arik"
+                className="w-full h-auto object-cover object-top"
+              />
+              {/* Subtle gradient at bottom of photo */}
+              <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[var(--color-floral)]/80 to-transparent" />
             </div>
           </motion.div>
-          </div>
-          
+
+          {/* Tagline + CTA below photo */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}
+            className="relative z-20 text-center px-8 pt-6 pb-4"
+          >
+            <h1 className="text-3xl font-bold leading-tight text-[var(--color-hot-berry)] mb-3">
+              Tu mano derecha,<br/>para florecer.
+            </h1>
+            <p className="text-base text-gray-600 leading-relaxed mb-6 max-w-xs mx-auto">
+              Gestión de contenido con mirada creativa y acompañamiento cercano.
+            </p>
+            <a
+              href="https://wa.me/584242800817?text=Hola%20ARIK,%20quiero%20contarles%20sobre%20mi%20proyecto."
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[var(--color-hot-berry)] text-white font-bold rounded-full px-8 py-3.5 shadow-lg shadow-[#c43670]/30 active:scale-95 transition-all"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Cuéntame tu proyecto
+            </a>
+          </motion.div>
         </div>
+
+        {/* ─── DESKTOP HERO (unchanged) ─── */}
+        <div className="hidden lg:block relative h-screen min-h-[850px]">
+
+          {/* Massive Logo (Left side) */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="absolute left-[20%] top-[30%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
+          >
+            <img src="/arik-logo-transparent.png" alt="ARIK Logo" className="w-[350px] md:w-[550px] lg:w-[700px] h-auto object-contain drop-shadow-md" />
+          </motion.div>
+
+          {/* Three Rotating Brand Flowers (Deep Background) */}
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <svg viewBox="0 0 1400 900" className="w-full h-full object-cover opacity-80">
+              <defs>
+                <g id="brand-flower-desktop">
+                  <ellipse cx="0" cy="0" rx="45" ry="160"/>
+                  <ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(60)"/>
+                  <ellipse cx="0" cy="0" rx="45" ry="160" transform="rotate(120)"/>
+                </g>
+              </defs>
+              <motion.use href="#brand-flower-desktop" fill="var(--color-petal)" className="opacity-50" initial={{ scale: 0.25 }} animate={{ rotate: 360, x: [100, 120, 100], y: [200, 180, 200] }} transition={{ repeat: Infinity, duration: 25, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-bubblegum)" className="opacity-40" initial={{ scale: 0.35 }} animate={{ rotate: -360, x: [150, 130, 150], y: [450, 470, 450] }} transition={{ repeat: Infinity, duration: 30, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.28 }} animate={{ rotate: 360, x: [100, 110, 100], y: [700, 680, 700] }} transition={{ repeat: Infinity, duration: 20, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-petal)" className="opacity-40" initial={{ scale: 0.3 }} animate={{ rotate: -360, x: [1250, 1230, 1250], y: [200, 220, 200] }} transition={{ repeat: Infinity, duration: 28, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-bubblegum)" className="opacity-30" initial={{ scale: 0.4 }} animate={{ rotate: 360, x: [1200, 1220, 1200], y: [500, 480, 500] }} transition={{ repeat: Infinity, duration: 22, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-hot-berry)" className="opacity-50" initial={{ scale: 0.25 }} animate={{ rotate: -360, x: [1250, 1270, 1250], y: [800, 780, 800] }} transition={{ repeat: Infinity, duration: 26, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-bubblegum)" className="opacity-40" initial={{ scale: 0.3 }} animate={{ rotate: 360, x: [400, 380, 400], y: [50, 70, 50] }} transition={{ repeat: Infinity, duration: 24, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-petal)" className="opacity-60" initial={{ scale: 0.45 }} animate={{ rotate: -360, x: [700, 720, 700], y: [40, 20, 40] }} transition={{ repeat: Infinity, duration: 29, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.35 }} animate={{ rotate: 360, x: [1000, 980, 1000], y: [60, 80, 60] }} transition={{ repeat: Infinity, duration: 21, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-petal)" className="opacity-40" initial={{ scale: 0.35 }} animate={{ rotate: -360, x: [400, 420, 400], y: [850, 830, 850] }} transition={{ repeat: Infinity, duration: 27, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-bubblegum)" className="opacity-50" initial={{ scale: 0.4 }} animate={{ rotate: 360, x: [700, 680, 700], y: [900, 880, 900] }} transition={{ repeat: Infinity, duration: 23, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-hot-berry)" className="opacity-40" initial={{ scale: 0.28 }} animate={{ rotate: -360, x: [1000, 1020, 1000], y: [850, 870, 850] }} transition={{ repeat: Infinity, duration: 25, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.11 }} animate={{ rotate: 360, x: [30, 10, 30], y: [30, 50, 30] }} transition={{ repeat: Infinity, duration: 32, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-petal)" className="opacity-30" initial={{ scale: 0.13 }} animate={{ rotate: -360, x: [30, 50, 30], y: [880, 860, 880] }} transition={{ repeat: Infinity, duration: 35, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-bubblegum)" className="opacity-30" initial={{ scale: 0.14 }} animate={{ rotate: 360, x: [1380, 1360, 1380], y: [30, 10, 30] }} transition={{ repeat: Infinity, duration: 31, ease: ease.inOut }} />
+              <motion.use href="#brand-flower-desktop" fill="var(--color-hot-berry)" className="opacity-30" initial={{ scale: 0.12 }} animate={{ rotate: -360, x: [1380, 1400, 1380], y: [880, 900, 880] }} transition={{ repeat: Infinity, duration: 33, ease: ease.inOut }} />
+            </svg>
+          </div>
+
+          {/* Center Arik Photo */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+            <div
+              className="relative w-full max-w-[800px] h-[80vh] max-h-[900px] mt-12 opacity-90"
+              style={{
+                WebkitMaskImage: 'radial-gradient(ellipse at 50% 50%, black 40%, transparent 75%)',
+                maskImage: 'radial-gradient(ellipse at 50% 50%, black 40%, transparent 75%)'
+              }}
+            >
+              <img src="/arik-hero.jpg" alt="Arik Background" className="w-full h-full object-contain object-center" />
+            </div>
+          </div>
+
+          {/* Devices Container */}
+          <div className="absolute inset-0 z-20 pointer-events-none" style={{ transformStyle: 'preserve-3d' }}>
+            {/* 3D Floating MacBook */}
+            <div className="absolute left-[20%] bottom-12 -translate-x-1/2 z-30 pointer-events-none" style={{ perspective: '2000px' }}>
+              <motion.div
+                initial={{ opacity: 0, x: -50, rotateY: 20 }}
+                animate={{ opacity: 1, x: 0, rotateY: 15, y: [0, -10, 0] }}
+                transition={{ opacity: { duration: 1, delay: 0.4 }, x: { duration: 1, delay: 0.4 }, y: { repeat: Infinity, duration: 6, ease: ease.inOut } }}
+                className="w-[480px] h-[340px] bg-[#1a1a1a] rounded-xl shadow-[30px_30px_60px_rgba(0,0,0,0.4)] border-[3px] border-[#333] flex flex-col overflow-hidden pointer-events-auto relative"
+                style={{ transform: "translateZ(100px) rotateY(15deg) rotateX(5deg)" }}
+              >
+                <div className="h-6 bg-[#2a2a2a] flex items-center px-3 gap-1.5 border-b border-[#333]">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+                  <span className="text-[10px] text-gray-400 font-mono ml-4">CapCut Pro - Reels_Arik.mp4</span>
+                </div>
+                <div className="flex-1 bg-[#141414] flex flex-col p-2 gap-2">
+                  <div className="flex gap-2 h-1/2">
+                    <div className="flex-1 bg-[#1f1f1f] rounded border border-[#2a2a2a] p-2 flex gap-2">
+                      <div className="w-12 h-12 bg-gray-700 rounded-sm" />
+                      <div className="w-12 h-12 bg-[var(--color-petal)] rounded-sm" />
+                      <div className="w-12 h-12 bg-[var(--color-hot-berry)] rounded-sm opacity-50" />
+                    </div>
+                    <div className="w-[45%] bg-black rounded border border-[#2a2a2a] flex items-center justify-center relative overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=400&auto=format&fit=crop" className="w-full h-full object-cover opacity-80" alt="Preview" />
+                      <div className="absolute inset-0 border-[2px] border-cyan-500/50" />
+                    </div>
+                  </div>
+                  <div className="flex-1 bg-[#1f1f1f] rounded border border-[#2a2a2a] p-2 flex flex-col gap-1 relative overflow-hidden">
+                    <div className="h-4 border-b border-[#333] flex gap-8 text-[8px] text-gray-500 font-mono">
+                      <span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span>
+                    </div>
+                    <div className="absolute top-0 bottom-0 left-[35%] w-[1px] bg-red-500 z-10">
+                      <div className="w-2 h-2 -ml-[3.5px] bg-red-500 rounded-full" />
+                    </div>
+                    <div className="h-5 mt-1 w-[80%] bg-blue-500/30 rounded flex items-center px-1 border border-blue-500/50">
+                      <span className="text-[8px] text-blue-200">Video_01.mp4</span>
+                    </div>
+                    <div className="h-5 w-[40%] bg-pink-500/30 rounded flex items-center px-1 border border-pink-500/50 ml-[10%]">
+                      <span className="text-[8px] text-pink-200">B-Roll_Arik</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* 3D Floating iPhone */}
+            <div className="absolute right-[20%] top-1/2 translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none" style={{ perspective: '2000px' }}>
+              <motion.div
+                initial={{ opacity: 0, x: 50, rotateY: -20 }}
+                animate={{ opacity: 1, x: 0, rotateY: -15, y: [0, -15, 0] }}
+                transition={{ opacity: { duration: 1, delay: 0.6 }, x: { duration: 1, delay: 0.6 }, y: { repeat: Infinity, duration: 5, ease: ease.inOut, delay: 1 } }}
+                className="w-[280px] h-[580px] bg-white rounded-[3rem] shadow-[-30px_30px_60px_rgba(0,0,0,0.4)] border-[8px] border-[#222] overflow-hidden pointer-events-auto relative"
+                style={{ transform: "translateZ(150px) rotateY(-15deg) rotateX(5deg)" }}
+              >
+                <div className="absolute top-0 inset-x-0 h-5 flex justify-center z-40">
+                  <div className="w-24 h-5 bg-[#222] rounded-b-xl" />
+                </div>
+                <div className="pt-8 px-4 pb-4 h-full bg-white overflow-hidden">
+                  <div className="flex items-center justify-between mb-4 mt-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] p-[2px]">
+                        <div className="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden">
+                          <img src="/arik-hero.jpg" alt="Profile" className="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <span className="font-bold text-[12px] block leading-tight">arik.studio</span>
+                        <span className="text-[10px] text-gray-500 font-medium">Content Studio & Strategy</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-[11px] mb-4 leading-snug text-gray-800">
+                    <strong>ARIK</strong><br/>
+                    🌻 Florecimiento con Cercanía<br/>
+                    Tu mano derecha creativa y estratégica<br/>
+                    <span className="text-blue-600 font-medium">linktr.ee/arikstudio</span>
+                  </div>
+                  <div className="flex gap-2 mb-4">
+                    <div className="flex-1 bg-gray-100 rounded-md py-1.5 text-center text-[11px] font-bold">Follow</div>
+                    <div className="flex-1 bg-gray-100 rounded-md py-1.5 text-center text-[11px] font-bold">Message</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-0.5">
+                    <div className="aspect-square bg-[var(--color-petal)]" />
+                    <div className="aspect-square bg-[var(--color-apricoat)]" />
+                    <div className="aspect-square bg-[var(--color-hot-berry)] opacity-90" />
+                    <div className="aspect-square bg-gray-200" />
+                    <div className="aspect-square bg-[var(--color-bubblegum)]" />
+                    <div className="aspect-square bg-gray-300" />
+                    <div className="aspect-square bg-gray-400" />
+                    <div className="aspect-square bg-[var(--color-hot-berry)]" />
+                    <div className="aspect-square bg-[var(--color-petal)]" />
+                  </div>
+                </div>
+                <div className="absolute bottom-0 inset-x-0 h-14 bg-white border-t border-gray-200 flex justify-around items-center z-40">
+                  <div className="w-6 h-6 rounded-md border-2 border-black" />
+                  <div className="w-6 h-6 rounded-full border-2 border-gray-400" />
+                  <div className="w-6 h-6 bg-black rounded-full" />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       {/* Global Persistent Scroll Indicator — hidden when footer is visible */}
@@ -256,8 +332,8 @@ export default function Home() {
         </motion.div>
       </motion.div>
 
-      {/* Main Copy & Intro Section */}
-      <section className="relative z-10 bg-[var(--color-floral)] py-24 pb-32">
+      {/* Main Copy & Intro Section — hidden on mobile since tagline is already in the hero */}
+      <section className="relative z-10 bg-[var(--color-floral)] hidden lg:block py-24 pb-32">
         <div className="container mx-auto px-6">
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} className="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto">
             <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] text-[var(--color-hot-berry)]">
@@ -271,7 +347,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative z-10 py-24 bg-white rounded-t-[3rem] shadow-sm">
+      <section id="services" className="relative z-10 pt-8 pb-24 md:py-24 bg-white rounded-t-[3rem] shadow-sm">
         <div className="container mx-auto px-6">
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}
