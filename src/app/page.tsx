@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { motion, useScroll, useTransform, useInView, Variants } from 'framer-motion';
 
 export default function Home() {
   const footerRef = useRef<HTMLElement>(null);
@@ -8,12 +8,12 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const scrollFade = useTransform(scrollYProgress, [0, 0], [1, 1]); // kept for potential future use
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
