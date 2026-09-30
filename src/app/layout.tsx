@@ -14,7 +14,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://byarik.com"),
+  metadataBase: new URL("https://arik-content-studio.falc0dev.me"),
   title: "ARIK Content Studio | Tu mano derecha, para florecer",
   description:
     "Gestión de contenido con mirada creativa y acompañamiento cercano. Social Media Management, Creación de Contenido, Producción Audiovisual y Modelo UGC.",
