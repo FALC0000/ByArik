@@ -14,8 +14,32 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ARIK Content Studio",
-  description: "Tu mano derecha, para florecer. Gestión de contenido con mirada creativa.",
+  metadataBase: new URL("https://byarik.com"),
+  title: "ARIK Content Studio | Tu mano derecha, para florecer",
+  description:
+    "Gestión de contenido con mirada creativa y acompañamiento cercano. Social Media Management, Creación de Contenido, Producción Audiovisual y Modelo UGC.",
+  openGraph: {
+    title: "ARIK Content Studio | Tu mano derecha, para florecer",
+    description:
+      "Gestión de contenido con mirada creativa y acompañamiento cercano. Social Media, Producción Audiovisual y Creación de Contenido (UGC).",
+    type: "website",
+    locale: "es_ES",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1400,
+        height: 788,
+        alt: "ARIK Content Studio — Tu mano derecha, para florecer.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ARIK Content Studio | Tu mano derecha, para florecer",
+    description:
+      "Gestión de contenido con mirada creativa y acompañamiento cercano.",
+    images: ["/twitter-image.jpg"],
+  },
 };
 
 export default function RootLayout({
