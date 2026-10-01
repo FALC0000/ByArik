@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/opengraph-image.jpg",
-        width: 1400,
-        height: 788,
+        width: 1200,
+        height: 630,
         alt: "ARIK Content Studio — Tu mano derecha, para florecer.",
       },
     ],
