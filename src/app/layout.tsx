@@ -26,6 +26,12 @@ export const metadata: Metadata = {
     locale: "es_ES",
     images: [
       {
+        url: "/og-square.png",
+        width: 400,
+        height: 400,
+        alt: "ARIK Content Studio",
+      },
+      {
         url: "/opengraph-image.jpg",
         width: 1200,
         height: 630,
