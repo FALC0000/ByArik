@@ -436,8 +436,8 @@ export default function Home() {
                 {/* IG Profile Header */}
                 <div className="pt-10 px-4 pb-3 flex items-center gap-3 border-b border-gray-100">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-yellow-400 via-rose-500 to-purple-600 p-[2px]">
-                    <div className="w-full h-full bg-white rounded-full overflow-hidden border border-white">
-                      <img src="/arik-hero-clean.png" className="w-full h-full object-cover object-top" />
+                    <div className="w-full h-full bg-white rounded-full overflow-hidden border border-white flex items-center justify-center p-1">
+                      <img src="/arik-avatar.png" alt="ARIK" className="w-full h-full object-contain" />
                     </div>
                   </div>
                   <div>
